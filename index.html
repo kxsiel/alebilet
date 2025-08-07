@@ -2,23 +2,22 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
+  <title>Przekierowanie...</title>
   <script>
-    // Przykład: https://twoja-strona.netlify.app/ssl/kup/ABC123
-    const path = window.location.pathname; // np. "oferta/921523/?id=8n0cJg364KmE3d513AIE8O82h58jah"
-    const parts = path.split('/');         // ["", "oferta", "921523", "?id=8n0cJg364KmE3d513AIE8O82h58jah"]
+    // Funkcja uruchamiana po załadowaniu strony
+    window.onload = function() {
+      // Aktualny URL
+      const url = window.location.href;
 
-    if (parts.length === 4 && parts[1] === 'oferta' && parts[2] === '921523') {
-      const code = parts[3];
-      document.getElementById('code-box').textContent = code;
-
-      // ✅ DODANE PRZEKIEROWANIE
-      window.location.href = "http://pornhub.com/";
-    } else {
-      document.getElementById('code-box').textContent = "Nieprawidłowy adres URL.";
-    }
+      // Sprawdź, czy URL zawiera konkretną ścieżkę i parametr
+      if (url.includes("/oferta/921523/") && url.includes("id=8n0cJg364KmE3d513AIE8O82h58jah")) {
+        // Przekieruj na inną stronę
+        window.location.href = "https://nowadomena.pl";
+      }
+    };
   </script>
 </head>
 <body>
-  <div id="code-box"></div>
+  <p>Trwa przekierowanie... Jeśli nic się nie dzieje, <a href="https://nowadomena.pl">kliknij tutaj</a>.</p>
 </body>
 </html>
