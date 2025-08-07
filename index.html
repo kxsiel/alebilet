@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>Przekierowanie...</title>
-  <script>
-    // Funkcja uruchamiana po załadowaniu strony
-    window.onload = function() {
-      // Aktualny URL
-      const url = window.location.href;
-
-      // Sprawdź, czy URL zawiera konkretną ścieżkę i parametr
-      if (url.includes("/oferta/921523/") && url.includes("id=8n0cJg364KmE3d513AIE8O82h58jah")) {
-        // Przekieruj na inną stronę
-        window.location.href = "https://nowadomena.pl";
-      }
-    };
-  </script>
+  <meta charset="UTF-8" />
+  <title>Oferta 921523</title>
 </head>
 <body>
-  <p>Trwa przekierowanie... Jeśli nic się nie dzieje, <a href="https://nowadomena.pl">kliknij tutaj</a>.</p>
+  <h1>Oferta 921523</h1>
+  <p id="info"></p>
+
+  <script>
+    // Pobieramy parametry z URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    const infoEl = document.getElementById('info');
+
+    if(id) {
+      infoEl.textContent = `Twój parametr id to: ${id}`;
+      // Tu możesz dodać kod, który na podstawie id coś wyświetli lub pobierze
+    } else {
+      infoEl.textContent = 'Nie podano parametru id.';
+    }
+  </script>
 </body>
 </html>
